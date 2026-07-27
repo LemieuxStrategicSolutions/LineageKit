@@ -1,0 +1,26 @@
+# OS cruft
+.DS_Store
+Thumbs.db
+
+# Secrets — never committed
+.env
+*.key
+*.pem
+
+# Cloud-sync placeholders
+*.icloud
+
+# Node / site
+node_modules/
+dist/
+.wrangler/
+*.log
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+
+# Local scratch
+tmp/
+examples/output/
