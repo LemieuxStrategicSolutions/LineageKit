@@ -1,0 +1,36 @@
+{
+  // Cloudflare Workers configuration for the public family-archive site.
+  // Local dev (miniflare) reads this file via @cloudflare/vite-plugin; the
+  // production deploy uses the derived config the build writes to
+  // dist/server/wrangler.json (see the `deploy` script in package.json).
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "family-archive",
+  "main": "./worker/index.ts",
+  "compatibility_date": "2026-05-15",
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": {
+    "directory": "./dist/client",
+    "binding": "ASSETS"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "family-archive-db",
+      // Placeholder. Run `wrangler d1 create family-archive-db` and paste the
+      // real database_id it prints here before deploying. Local dev works with
+      // the placeholder because miniflare keeps its own local SQLite copy.
+      "database_id": "00000000-0000-4000-8000-000000000000",
+      "migrations_dir": "drizzle"
+    }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "ARCHIVE_UPLOADS",
+      // Run `wrangler r2 bucket create family-archive-uploads` before deploying.
+      "bucket_name": "family-archive-uploads"
+    }
+  ],
+  "observability": {
+    "enabled": true
+  }
+}

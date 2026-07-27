@@ -1,0 +1,22 @@
+{
+  "documents": [
+    {
+      "category": "Cycle charter",
+      "path": "../examples/sample-cycle-1-charter.md",
+      "line": "All lines",
+      "reviewed_by": "example-maintainer",
+      "reviewed_on": "2031-03-02",
+      "living_people_checked": true
+    },
+    {
+      "category": "Cycle report",
+      "path": "../examples/sample-cycle-1-report.md",
+      "line": "All lines",
+      "reviewed_by": "example-maintainer",
+      "reviewed_on": "2031-03-09",
+      "living_people_checked": true
+    }
+  ],
+  "people_allowlist": ["P000004", "P000011", "P000014", "P000015"],
+  "redactions": []
+}
